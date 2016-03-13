@@ -1,5 +1,4 @@
 #include <iostream>
-
 using namespace std;
 
 int numOfQueen = 0;
@@ -7,7 +6,7 @@ int numOfQueen = 0;
 void Make_Board(int num, int** (&board))
 {
 	board = new int*[num];
-	for (int i = 0; i < num; i++)		// N X N Ã¼½ºÆÇ ¹è¿­ »ý¼º
+	for (int i = 0; i < num; i++)		// N X N ì²´ìŠ¤íŒ ë°°ì—´ ìƒì„±
 		board[i] = new int[num];
 
 	for (int i = 0; i < num; i++)
@@ -38,20 +37,20 @@ void Queen(int num, int** board, int i, int j)
 	if (!(i < num && j < num))
 		return;
 
-	bool here = true;					// ÄýÀ» µÎ¾îµµ µÇ´ÂÁö È®ÀÎ
+	bool here = true;					// í€¸ì„ ë‘ì–´ë„ ë˜ëŠ”ì§€ í™•ì¸
 
-	for (int a = 0; a < num; a++)		// °¡·ÎÁÙ °Ë»ç
+	for (int a = 0; a < num; a++)		// ê°€ë¡œì¤„ ê²€ì‚¬
 		if (board[a][j] == 1)
 			here = false;
 
-	for (int b = 0; b < num; b++)		// ¼¼·ÎÁÙ °Ë»ç
+	for (int b = 0; b < num; b++)		// ì„¸ë¡œì¤„ ê²€ì‚¬
 		if (board[i][b] == 1)
 			here = false;
 
-	int x = i;							// Àç±Í¾µ¶§ i,j °ª ¹Ù²ã¼­ ¾µ°Å¶ó ÀÓ½Ãº¯¼ö
+	int x = i;							// ìž¬ê·€ì“¸ë•Œ i,j ê°’ ë°”ê¿”ì„œ ì“¸ê±°ë¼ ìž„ì‹œë³€ìˆ˜
 	int y = j;
 
-	while (1)							// ÁÂ»ó ¹æÇâ
+	while (1)							// ì¢Œìƒ ë°©í–¥
 	{
 		x -= 1;
 		y -= 1;
@@ -68,7 +67,7 @@ void Queen(int num, int** board, int i, int j)
 
 	}
 
-	while (1)							// ¿ì»ó ¹æÇâ
+	while (1)							// ìš°ìƒ ë°©í–¥
 	{
 		x += 1;
 		y -= 1;
@@ -84,7 +83,7 @@ void Queen(int num, int** board, int i, int j)
 			here = false;
 	}
 
-	while (1)							// ÁÂÇÏ ¹æÇâ
+	while (1)							// ì¢Œí•˜ ë°©í–¥
 	{
 		x -= 1;
 		y += 1;
@@ -100,7 +99,7 @@ void Queen(int num, int** board, int i, int j)
 			here = false;
 	}
 
-	while (1)							// ¿ìÇÏ ¹æÇâ
+	while (1)							// ìš°í•˜ ë°©í–¥
 	{
 		x += 1;
 		y += 1;
@@ -165,7 +164,7 @@ int main(void)
 {
 	int num;
 	int** board = NULL;
-	cout << "N X N Ã¼½ºÆÇ¿¡ N °³ÀÇ ¿©¿ÕÀÌ ¼­·Î °ø°ÝÇÏÁö ¸øÇÏ°Ô ¹èÄ¡ÇÕ´Ï´Ù." << endl << "N ÀÇ °ªÀº? : ";
+	cout << "N X N ì²´ìŠ¤íŒì— N ê°œì˜ ì—¬ì™•ì´ ì„œë¡œ ê³µê²©í•˜ì§€ ëª»í•˜ê²Œ ë°°ì¹˜í•©ë‹ˆë‹¤." << endl << "N ì˜ ê°’ì€? : ";
 	cin >> num;
 
 	Make_Board(num, board);
